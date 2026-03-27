@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..900&family=Fredoka:wght@300..700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka", sans-serif;
+}
+
+body {
+  @apply bg-[#0a0a0a] text-white font-sans selection:bg-[#00d181] selection:text-black;
+}
+
+/* Najot Card Style */
+.najot-card {
+  @apply bg-[#121212] border border-[#1a1a1a] rounded-[2rem] p-8 relative overflow-hidden transition-all duration-500 cursor-pointer hover:border-[#00d181] hover:shadow-[0_0_40px_rgba(0,209,129,0.1)] hover:-translate-y-2;
+}
+
+.najot-card-icon {
+  @apply absolute top-6 right-6 w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6;
+}
+
+/* Najot Input Style */
+.najot-input {
+  @apply w-full bg-[#121212] border-2 border-[#1a1a1a] rounded-full py-5 px-16 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#00d181] focus:ring-4 focus:ring-[#00d1811a] transition-all duration-300 font-bold;
+}
+
+/* Najot Button Style */
+.btn-najot {
+  @apply bg-[#00d181] text-black font-black py-5 px-10 rounded-2xl flex items-center justify-center gap-3 hover:bg-[#00f094] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-[0_10px_20px_rgba(0,209,129,0.2)] uppercase tracking-widest;
+}
+
+/* Lesson Content Container */
+.lesson-content {
+  @apply bg-[#121212] border border-[#1a1a1a] rounded-[2.5rem] p-10 shadow-2xl;
+}
+
+/* Quiz Option Style */
+.quiz-option-dark {
+  @apply w-full bg-[#1a1a1a] border-2 border-[#222] p-6 rounded-2xl text-left flex items-center justify-between gap-4 transition-all duration-300 hover:border-[#333] hover:bg-[#222] font-bold text-lg;
+}
+
+.quiz-option-dark.selected {
+  @apply border-[#00d181] bg-[#00d1810a] text-[#00d181];
+}
+
+.quiz-option-dark.correct {
+  @apply border-[#00d181] bg-[#00d181] text-black;
+}
+
+.quiz-option-dark.wrong {
+  @apply border-red-500 bg-red-500 text-white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #222;
+}
